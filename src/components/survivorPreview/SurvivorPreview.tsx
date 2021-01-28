@@ -1,10 +1,21 @@
+import { Button } from 'antd';
+
 import { Survivor } from '../../types/survivor';
+
 
 type Props = {
     survivor: Survivor | null;
+    changeStatus: (id: number) => void;
 }
 
-export const SurvivorPreview = ({ survivor }: Props) => {
+export const SurvivorPreview = ({ survivor, changeStatus }: Props) => {
+
+    const handleClick = () => {
+        if (survivor) {
+            changeStatus(survivor.id)
+        }
+    }
+
     return (
         survivor && <div>
             <h1 className='display-4'>Survivor Details</h1>
@@ -18,6 +29,7 @@ export const SurvivorPreview = ({ survivor }: Props) => {
             <p>{survivor.height + ' kg'}</p>
             <p className='lead'>Infected:</p>
             <p>{survivor.infected ? 'Yes' : 'No'}</p>
+            <Button onClick={handleClick} type='primary'>Change Status</Button>
         </div>
     )
 }

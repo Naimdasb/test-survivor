@@ -29,6 +29,10 @@ export const SurvivorTable = ({ data }: Props) => {
         }
     };
 
+    const changeStatus = (id: number) => {
+        console.log('do something')
+    }
+
     return (
         <div>
             <Table dataSource={data} columns={getColumns({ onClick: handleClick })} />;
@@ -39,7 +43,7 @@ export const SurvivorTable = ({ data }: Props) => {
                 visible={visible}
                 width="30%"
             >
-                <SurvivorPreview survivor={survivor} />
+                <SurvivorPreview survivor={survivor} changeStatus={changeStatus} />
             </Drawer>
         </div>
     )
