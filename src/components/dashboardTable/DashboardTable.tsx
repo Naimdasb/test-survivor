@@ -1,4 +1,3 @@
-import { useEffect, useState } from 'react'
 import { SurvivorTable } from './tables/SurvivorTable';
 
 import { Survivor } from '../../types/survivor';

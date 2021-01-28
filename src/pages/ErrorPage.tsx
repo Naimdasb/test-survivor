@@ -1,4 +1,4 @@
-import Error from 'next/error'
+import Error from 'next/error';
 
 type Props = {
     errorCode: number;
