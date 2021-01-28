@@ -1,9 +1,6 @@
+import { Home } from '../components/home/Home'
 const Index = () => {
-    return (
-        <div>
-            <h1>First commit</h1>
-        </div>
-    )
+    return <Home />
 }
 
 export default Index;
