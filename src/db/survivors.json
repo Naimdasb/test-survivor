@@ -5,7 +5,8 @@
         "age": 23,
         "height": 180,
         "weight": 80,
-        "infected": true
+        "infected": true,
+        "id": 1
     },
     {
         "name": "Maria Schwartz",
@@ -13,7 +14,8 @@
         "age": 38,
         "height": 195,
         "weight": 87,
-        "infected": false
+        "infected": false,
+        "id": 2
     },
     {
         "name": "Alexander Voigh",
@@ -21,7 +23,8 @@
         "age": 47,
         "height": 155,
         "weight": 65,
-        "infected": true
+        "infected": true,
+        "id": 3
     },
     {
         "name": "Gordon Lexington",
@@ -29,7 +32,8 @@
         "age": 63,
         "height": 168,
         "weight": 101,
-        "infected": false
+        "infected": false,
+        "id": 4
     },
     {
         "name": "Jennifer Green",
@@ -37,6 +41,7 @@
         "age": 79,
         "height": 165,
         "weight": 65,
-        "infected": true
+        "infected": true,
+        "id": 5
     }
 ]

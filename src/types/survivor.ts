@@ -1,4 +1,5 @@
 export type Survivor = {
+    "id": number;
     "name": string;
     "city": string;
     "age": number;

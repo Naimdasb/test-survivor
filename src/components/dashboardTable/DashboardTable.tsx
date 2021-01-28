@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Table } from './tables/Table';
+import { SurvivorTable } from './tables/SurvivorTable';
 
 import { Survivor } from '../../types/survivor';
 
@@ -9,13 +9,10 @@ type Props = {
 
 
 export const DashboardTable = ({ data }: Props) => {
-    useEffect(() => {
-        console.log(data)
-    }, [])
     return (
-        <div>
-            Dashbaord
-            <Table />
+        <div className='container'>
+            <h1 className='display-4 py-5'>Dashbaord</h1>
+            <SurvivorTable data={data} />
         </div>
     )
 }
