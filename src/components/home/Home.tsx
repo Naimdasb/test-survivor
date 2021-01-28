@@ -1,5 +1,3 @@
-import styles from './Home.module.css'
-
 import { Button } from 'antd'
 
 export const Home = () => {
