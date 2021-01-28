@@ -1,0 +1,42 @@
+[
+    {
+        "name": "John Locke",
+        "city": "London",
+        "age": 23,
+        "height": 180,
+        "weight": 80,
+        "infected": true
+    },
+    {
+        "name": "Maria Schwartz",
+        "city": "Spain",
+        "age": 38,
+        "height": 195,
+        "weight": 87,
+        "infected": false
+    },
+    {
+        "name": "Alexander Voigh",
+        "city": "United States",
+        "age": 47,
+        "height": 155,
+        "weight": 65,
+        "infected": true
+    },
+    {
+        "name": "Gordon Lexington",
+        "city": "Germany",
+        "age": 63,
+        "height": 168,
+        "weight": 101,
+        "infected": false
+    },
+    {
+        "name": "Jennifer Green",
+        "city": "Australia",
+        "age": 79,
+        "height": 165,
+        "weight": 65,
+        "infected": true
+    }
+]
