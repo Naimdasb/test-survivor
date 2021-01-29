@@ -41,7 +41,7 @@ export const SurvivorTable = () => {
                 closable={false}
                 onClose={onClose}
                 visible={visible}
-                width="30%"
+                width="70%"
             >
                 <SurvivorPreview survivor={survivor} />
             </Drawer>
