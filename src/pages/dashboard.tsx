@@ -11,7 +11,6 @@ type Props = {
 }
 
 const Dashboard = ({ data }: Props) => {
-    console.log(data)
     const dispatch = useDispatch()
 
     useEffect(() => {

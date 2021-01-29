@@ -25,6 +25,17 @@ const survivors = async (req: NextApiRequest, res: NextApiResponse) => {
                 res.status(400).json({ success: false });
             }
             break;
+        case 'PUT':
+            try {
+                await Survivor.updateOne({
+                    _id: req.body._id
+                }, { infected: !req.body.infected }, { upsert: true });
+
+                res.status(200).json({ success: true });
+            } catch (error) {
+                res.status(400).json({ success: false });
+            }
+            break;
         default:
             res.status(400).json({ success: false });
     }
