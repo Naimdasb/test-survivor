@@ -6,10 +6,9 @@ import { useDispatch } from 'react-redux';
 
 type Props = {
     data: Survivor[];
-    error?: boolean;
 }
 
-const Dashboard = ({ data, error }: Props) => {
+const Dashboard = ({ data }: Props) => {
 
     const dispatch = useDispatch()
 
