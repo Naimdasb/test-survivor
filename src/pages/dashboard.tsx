@@ -29,7 +29,7 @@ export default Dashboard;
 
 export async function getStaticProps() {
     try {
-        const res = await fetch(`http://localhost:3000/api/survivors2`)
+        const res = await fetch(`http://localhost:3000/api/survivors`)
         const data = await res.json()
         return {
             props: { data }
