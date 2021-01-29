@@ -43,5 +43,50 @@
         "weight": 65,
         "infected": true,
         "id": 5
+    },
+    {
+        "name": "Xao Min",
+        "city": "China",
+        "age": 29,
+        "height": 174,
+        "weight": 82,
+        "infected": true,
+        "id": 6
+    },
+    {
+        "name": "Pedro Hernandez",
+        "city": "Portugal",
+        "age": 49,
+        "height": 193,
+        "weight": 112,
+        "infected": false,
+        "id": 7
+    },
+    {
+        "name": "Jules Soufle",
+        "city": "France",
+        "age": 31,
+        "height": 178,
+        "weight": 78,
+        "infected": true,
+        "id": 8
+    },
+    {
+        "name": "Christine Alex",
+        "city": "Australia",
+        "age": 52,
+        "height": 199,
+        "weight": 90,
+        "infected": false,
+        "id": 9
+    },
+    {
+        "name": "Nilokai Rob",
+        "city": "Russia",
+        "age": 41,
+        "height": 184,
+        "weight": 87,
+        "infected": true,
+        "id": 10
     }
 ]
