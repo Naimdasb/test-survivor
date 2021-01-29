@@ -49,7 +49,18 @@ export const getColumns = ({ onClick }: Props): ColumnsType<Survivor> => [
     {
         title: 'Infected',
         dataIndex: 'infected',
-        render: (infected: boolean) => <StatusTag text={infected ? 'Yes' : 'No'} status={infected} />
+        render: (infected: boolean) => <StatusTag text={infected ? 'Yes' : 'No'} status={infected} />,
+        filters: [
+            {
+                text: 'Yes',
+                value: true,
+            },
+            {
+                text: 'No',
+                value: false,
+            },
+        ],
+        onFilter: (value, record) => record.infected === value,
     },
     {
         title: 'Actions',

@@ -33,8 +33,6 @@ export const SurvivorTable = () => {
         }
     };
 
-
-
     return (
         <div>
             <Table dataSource={data} columns={getColumns({ onClick: handleClick })} />;
