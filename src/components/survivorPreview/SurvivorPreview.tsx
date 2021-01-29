@@ -2,17 +2,19 @@ import { Button } from 'antd';
 
 import { Survivor } from '../../types/survivor';
 
+import { useDispatch } from 'react-redux';
 
 type Props = {
     survivor: Survivor | null;
-    changeStatus: (id: number) => void;
 }
 
-export const SurvivorPreview = ({ survivor, changeStatus }: Props) => {
+export const SurvivorPreview = ({ survivor }: Props) => {
+
+    const dispatch = useDispatch();
 
     const handleClick = () => {
         if (survivor) {
-            changeStatus(survivor.id)
+            dispatch({ type: 'UPDATE_SURVIVOR', payload: survivor.id });
         }
     }
 

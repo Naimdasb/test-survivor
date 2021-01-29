@@ -1,17 +1,11 @@
 import { SurvivorTable } from './tables/SurvivorTable';
 
-import { Survivor } from '../../types/survivor';
+export const DashboardTable = () => {
 
-type Props = {
-    data?: Survivor[];
-}
-
-
-export const DashboardTable = ({ data }: Props) => {
     return (
         <div className='container'>
             <h1 className='display-4 py-5'>Dashbaord</h1>
-            <SurvivorTable data={data} />
+            <SurvivorTable />
         </div>
     )
 }

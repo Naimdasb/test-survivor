@@ -1,6 +1,9 @@
 import { DashboardTable } from '../components/dashboardTable/DashboardTable';
-import { ErrorPage } from './ErrorPage';
+import { ErrorPage } from './error/ErrorPage';
 import { Survivor } from '../types/survivor';
+import { useEffect } from 'react';
+
+import { useDispatch } from 'react-redux';
 
 type Props = {
     data: Survivor[];
@@ -8,26 +11,34 @@ type Props = {
 }
 
 const Dashboard = ({ data, error }: Props) => {
+
+    const dispatch = useDispatch()
+
+    useEffect(() => {
+        dispatch({ type: 'UPDATE_DB', payload: data })
+    }, [])
+
     if (error) {
         return <ErrorPage errorCode={404} />
     } else {
-        return <DashboardTable data={data} />
+        return <DashboardTable />
     }
 }
 
 export default Dashboard;
 
 export async function getStaticProps() {
-    const res = await fetch(`http://localhost:3000/api/survivors`)
-    const data = await res.json()
+    try {
+        const res = await fetch(`http://localhost:3000/api/survivors2`)
+        const data = await res.json()
+        return {
+            props: { data }
+        }
 
-    if (!data) {
+    } catch (error) {
+        console.log(error)
         return {
             error: true,
         }
-    }
-
-    return {
-        props: { data }
     }
 }

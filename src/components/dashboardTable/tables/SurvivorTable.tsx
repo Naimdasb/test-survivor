@@ -9,14 +9,18 @@ import { Survivor } from '../../../types/survivor';
 import { Drawer } from 'antd';
 
 import { SurvivorPreview } from '../../survivorPreview/SurvivorPreview';
+import { useSelector } from 'react-redux';
 
 type Props = {
     data?: Survivor[];
 }
 
-export const SurvivorTable = ({ data }: Props) => {
+export const SurvivorTable = () => {
     const [visible, setVisible] = useState<boolean>(false);
     const [survivor, setSurvivorData] = useState<Survivor | null>(null);
+
+
+    const data = useSelector((state: any) => state.survivors);
 
     const onClose = () => {
         setVisible(false);
@@ -29,9 +33,7 @@ export const SurvivorTable = ({ data }: Props) => {
         }
     };
 
-    const changeStatus = (id: number) => {
-        console.log('do something')
-    }
+
 
     return (
         <div>
@@ -43,7 +45,7 @@ export const SurvivorTable = ({ data }: Props) => {
                 visible={visible}
                 width="30%"
             >
-                <SurvivorPreview survivor={survivor} changeStatus={changeStatus} />
+                <SurvivorPreview survivor={survivor} />
             </Drawer>
         </div>
     )
