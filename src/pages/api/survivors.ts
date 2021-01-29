@@ -6,30 +6,28 @@ import Survivor from '../../db/models/models';
 
 dbConnect();
 
-const getAllDocuments = async () => {
-    const data = await Survivor.find({})
-    return data;
-}
+const survivors = async (req: NextApiRequest, res: NextApiResponse) => {
 
-const survivors = (req: NextApiRequest, res: NextApiResponse) => {
-
-    if (req.method === 'POST') {
-        res.statusCode = 200;
-        const survivor = new Survivor(JSON.parse(req.body));
-        survivor.save().then(() => {
-            console.log('Saved into DB')
-        }).catch((error: Error) => {
-            console.log(error)
-        })
-        res.end();
-    } else {
-        res.statusCode = 200;
-        res.setHeader('Content-Type', 'application/json');
-        const data = getAllDocuments();
-        res.json(JSON.stringify(data));
-        res.end();
+    switch (req.method) {
+        case 'GET':
+            try {
+                const data = await Survivor.find({});
+                res.status(200).json({ success: true, data });
+            } catch (error) {
+                res.status(400).json({ success: false });
+            }
+            break;
+        case 'POST':
+            try {
+                await Survivor.create(req.body);
+                res.status(200).json({ success: true });
+            } catch (error) {
+                res.status(400).json({ success: false });
+            }
+            break;
+        default:
+            res.status(400).json({ success: false });
     }
-
 }
 
 export default survivors;

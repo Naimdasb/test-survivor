@@ -5,12 +5,15 @@ const options = {
     useUnifiedTopology: true,
 }
 
-export const dbConnect = () => {
-    mongoose.connect(process.env.MONGO_URI, options)
-        .then(() => {
-            console.log('Mongoose connection done');
-        })
-        .catch((e) => {
-            console.log('Mongoose connection error');
-        });
+const connection = {}
+
+export const dbConnect = async () => {
+
+    if (connection.on) {
+        return;
+    }
+
+    const db = await mongoose.connect(process.env.MONGO_URI, options);
+
+    connection.on = db.connections[0].readyState;
 }

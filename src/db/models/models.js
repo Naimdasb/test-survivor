@@ -11,4 +11,4 @@ const survivorSchema = new Schema({
     infected: Boolean
 })
 
-export default mongoose.models['Survivors'] || mongoose.model('Survivor', survivorSchema);
+export default mongoose.models.Survivor || mongoose.model('Survivor', survivorSchema);
