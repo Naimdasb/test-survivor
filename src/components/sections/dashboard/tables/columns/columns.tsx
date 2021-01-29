@@ -17,6 +17,7 @@ export const getColumns = ({ onClick }: Props): ColumnsType<Survivor> => [
     {
         title: 'Name',
         dataIndex: 'name',
+        key: 'name',
         filterDropdown,
         onFilter: (value: string | number | boolean, record: Survivor) =>
             record['name']
@@ -33,22 +34,27 @@ export const getColumns = ({ onClick }: Props): ColumnsType<Survivor> => [
     {
         title: 'id',
         dataIndex: 'id',
+        key: 'id'
     },
     {
         title: 'City',
         dataIndex: 'city',
+        key: 'city'
     },
     {
         title: 'Weight (kg)',
         dataIndex: 'weight',
+        key: 'weight'
     },
     {
         title: 'Height (cm)',
         dataIndex: 'height',
+        key: 'height'
     },
     {
         title: 'Infected',
         dataIndex: 'infected',
+        key: 'infected',
         render: (infected: boolean) => <StatusTag text={infected ? 'Yes' : 'No'} status={infected} />,
         filters: [
             {
