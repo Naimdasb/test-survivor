@@ -35,7 +35,7 @@ export const SurvivorTable = () => {
 
     return (
         <div>
-            <Table dataSource={data} columns={getColumns({ onClick: handleClick })} />
+            <Table dataSource={data} columns={getColumns({ onClick: handleClick })} scroll={{ x: '100%' }} />
             <Drawer
                 placement="right"
                 closable={false}

@@ -1,0 +1,2 @@
+export const UPDATE_DB = 'UPDATE_DB';
+export const UPDATE_SURVIVOR = 'UPDATE_SURVIVOR';
