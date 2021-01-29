@@ -1,9 +1,9 @@
-import { StatusTag } from '../../../statusTag/StatusTag';
+import { StatusTag } from '../../../../statusTag/StatusTag';
 import { Button } from 'antd';
 
 import { ColumnsType } from 'antd/lib/table';
 
-import { Survivor } from '../../../../types/survivor';
+import { Survivor } from '../../../../../types/survivor';
 
 import { SearchOutlined } from '@ant-design/icons';
 

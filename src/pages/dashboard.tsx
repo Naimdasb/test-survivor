@@ -1,4 +1,4 @@
-import { DashboardTable } from '../components/dashboardTable/DashboardTable';
+import { DashboardTable } from '../components/sections/dashboard/DashboardTable';
 import { Survivor } from '../types/survivor';
 import { useEffect } from 'react';
 
