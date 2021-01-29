@@ -2,8 +2,6 @@ import React from 'react';
 
 import { Input, Button, Space } from 'antd';
 
-import { SearchOutlined } from '@ant-design/icons';
-
 type filterDropdown = {
     setSelectedKeys: (selectedKeys: string[]) => void;
     selectedKeys: string[];
@@ -34,7 +32,6 @@ export const filterDropdown = ({
                 <Button
                     type="primary"
                     onClick={confirm}
-                    icon={<SearchOutlined />}
                     size="small"
                     style={{ width: 90 }}
                 >

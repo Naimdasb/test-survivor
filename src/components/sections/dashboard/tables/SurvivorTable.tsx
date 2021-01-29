@@ -15,7 +15,6 @@ export const SurvivorTable = () => {
     const [visible, setVisible] = useState<boolean>(false);
     const [survivor, setSurvivorData] = useState<Survivor | null>(null);
 
-
     const data = useSelector((state: any) => state.survivors);
 
     const onClose = () => {
