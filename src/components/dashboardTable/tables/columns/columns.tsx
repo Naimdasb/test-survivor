@@ -5,6 +5,9 @@ import { ColumnsType } from 'antd/lib/table';
 
 import { Survivor } from '../../../../types/survivor';
 
+import { SearchOutlined } from '@ant-design/icons';
+
+import { filterDropdown } from '../utils/FilterDropdown'
 
 type Props = {
     onClick: (survivor: Survivor) => () => void;
@@ -14,6 +17,18 @@ export const getColumns = ({ onClick }: Props): ColumnsType<Survivor> => [
     {
         title: 'Name',
         dataIndex: 'name',
+        filterDropdown,
+        onFilter: (value: string | number | boolean, record: Survivor) =>
+            record['name']
+                ? record['name']
+                    .toString()
+                    .toLowerCase()
+                    .includes(value.toString().toLowerCase())
+                : false,
+        filterIcon: (filtered: boolean) => (
+            <SearchOutlined style={{ color: filtered ? '#1890ff' : undefined }} />
+        ),
+        render: (fieldData: string) => fieldData,
     },
     {
         title: 'id',
