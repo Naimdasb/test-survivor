@@ -11,10 +11,6 @@ import { Drawer } from 'antd';
 import { SurvivorPreview } from '../../../survivorPreview/SurvivorPreview';
 import { useSelector } from 'react-redux';
 
-type Props = {
-    data?: Survivor[];
-}
-
 export const SurvivorTable = () => {
     const [visible, setVisible] = useState<boolean>(false);
     const [survivor, setSurvivorData] = useState<Survivor | null>(null);
