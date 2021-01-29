@@ -1,11 +1,33 @@
 import { NextApiResponse, NextApiRequest } from 'next';
 
-import data from '../../db/survivors.json'
+import { dbConnect } from '../../db/dbConnect';
 
-const survivors = (req: NextApiRequest, res: NextApiResponse) => {
-    res.statusCode = 200;
-    res.setHeader('Content-Type', 'application/json')
-    res.end(JSON.stringify(data))
+import Survivor from '../../db/models/models';
+
+dbConnect();
+
+const survivors = async (req: NextApiRequest, res: NextApiResponse) => {
+
+    switch (req.method) {
+        case 'GET':
+            try {
+                const data = await Survivor.find({});
+                res.status(200).json({ success: true, data });
+            } catch (error) {
+                res.status(400).json({ success: false });
+            }
+            break;
+        case 'POST':
+            try {
+                await Survivor.create(req.body);
+                res.status(200).json({ success: true });
+            } catch (error) {
+                res.status(400).json({ success: false });
+            }
+            break;
+        default:
+            res.status(400).json({ success: false });
+    }
 }
 
 export default survivors;

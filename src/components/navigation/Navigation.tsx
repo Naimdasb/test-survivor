@@ -15,6 +15,9 @@ export const Navigation = () => {
                         <div className='p-2'>
                             <Link href='/dashboard'>Dashboard</Link>
                         </div>
+                        <div className='p-2'>
+                            <Link href='/add'>Add Survivor</Link>
+                        </div>
                     </Nav>
                 </Navbar.Collapse>
             </Container>

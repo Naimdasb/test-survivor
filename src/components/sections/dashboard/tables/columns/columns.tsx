@@ -33,7 +33,7 @@ export const getColumns = ({ onClick }: Props): ColumnsType<Survivor> => [
     },
     {
         title: 'id',
-        dataIndex: 'id',
+        dataIndex: '_id',
         key: 'id'
     },
     {
