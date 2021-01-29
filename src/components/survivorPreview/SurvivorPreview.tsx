@@ -14,7 +14,7 @@ export const SurvivorPreview = ({ survivor }: Props) => {
 
     const handleClick = () => {
         if (survivor) {
-            dispatch({ type: 'UPDATE_SURVIVOR', payload: survivor.id });
+            dispatch({ type: 'UPDATE_SURVIVOR', payload: survivor._id });
         }
     }
 

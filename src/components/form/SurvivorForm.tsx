@@ -21,7 +21,8 @@ export const SurvivorForm = () => {
             notification.success({ message: 'Success', description: 'Your survivor was added!' });
             router.push('/');
         } catch (error) {
-            notification.error({ message: 'Error', description: 'There was an error.' })
+            notification.error({ message: 'Error', description: 'There was an error.' });
+            router.push('/');
         }
     }
 
@@ -62,7 +63,7 @@ export const SurvivorForm = () => {
                 </Item>
                 <Item
                     label="Height"
-                    name="heihgt"
+                    name="height"
                     rules={[{ required: true, message: "Please enter survivor's height." }]}
                 >
                     <Input />
