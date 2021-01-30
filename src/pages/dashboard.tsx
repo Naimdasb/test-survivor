@@ -14,7 +14,7 @@ const Dashboard = ({ data }: Props) => {
 
     useEffect(() => {
         dispatch({ type: 'UPDATE_DB', payload: data })
-    }, [])
+    }, [data])
 
     return (
         <div>
