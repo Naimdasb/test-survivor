@@ -1,5 +1,5 @@
 import { SurvivorTable } from '../../tables/SurvivorTable';
-import { Statistics } from '../../statistic/Statistics';
+import { Statistics } from '../../statistics/Statistics';
 
 export const DashboardTable = () => {
 

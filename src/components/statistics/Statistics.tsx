@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 import { Survivor } from '../../types/survivor';
 
 export const Statistics = () => {
-    const [value, setValue] = useState<number>(0)
+    const [infected, setInfected] = useState<number>(0)
 
     const survivors = useSelector((state: any) => state.survivors);
 
@@ -17,12 +17,17 @@ export const Statistics = () => {
                 counter++;
             }
         })
-        setValue(counter);
+        setInfected(counter);
     }, [survivors])
 
     return (
-        <Card className="col-sm-4 col-6 mb-5">
-            <Statistic title="Total Infected" value={value} />
-        </Card>
+        <div className='d-flex gap-3'>
+            <Card className="col-sm-4 col-6 mb-5">
+                <Statistic title="Total Survivors" value={survivors.length} />
+            </Card>
+            <Card className="col-sm-4 col-6 mb-5">
+                <Statistic title="Total Infected" value={infected} />
+            </Card>
+        </div>
     )
 }

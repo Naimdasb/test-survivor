@@ -14,7 +14,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { notification, Modal } from 'antd';
 
 export const SurvivorTable = () => {
-    const [previewVisible, setPreviewVisible] = useState<boolean>(false);
+    const [reviewVisible, setReviewVisible] = useState<boolean>(false);
     const [survivor, setSurvivorData] = useState<Survivor | null>(null);
     const [selectedId, setSelectedId] = useState<string | null>(null);
     const [modalVisible, setModalVisible] = useState<boolean>(false);
@@ -24,13 +24,13 @@ export const SurvivorTable = () => {
     const dispatch = useDispatch();
 
     const handleOnClosePreview = () => {
-        setPreviewVisible(false);
+        setReviewVisible(false);
     };
 
-    const handlePreview = (survivor: Survivor) => {
+    const handleReview = (survivor: Survivor) => {
         return () => {
             setSurvivorData(survivor);
-            setPreviewVisible(true);
+            setReviewVisible(true);
         }
     };
 
@@ -67,12 +67,12 @@ export const SurvivorTable = () => {
 
     return (
         <div>
-            <Table dataSource={data} columns={getColumns({ handlePreview, handleRemove })} scroll={{ x: '100%' }} rowKey={record => record._id} bordered />
+            <Table dataSource={data} columns={getColumns({ handleReview, handleRemove })} scroll={{ x: '100%' }} rowKey={record => record._id} bordered />
             <Drawer
                 placement="right"
                 closable={false}
                 onClose={handleOnClosePreview}
-                visible={previewVisible}
+                visible={reviewVisible}
                 width="70%"
             >
                 <SurvivorPreview survivor={survivor} />
