@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { Statistic } from 'antd';
+import { Statistic, Card } from 'antd';
 import { useSelector } from 'react-redux';
 
 import { Survivor } from '../../types/survivor';
@@ -21,10 +21,8 @@ export const Statistics = () => {
     }, [survivors])
 
     return (
-        <div className='card col-sm-4 col-6 mb-5'>
-            <div className='card-body p-4'>
-                <Statistic title="Total Infected" value={value} />
-            </div>
-        </div>
+        <Card className="col-sm-4 col-6 mb-5">
+            <Statistic title="Total Infected" value={value} />
+        </Card>
     )
 }

@@ -32,7 +32,7 @@ export const getColumns = ({ onClick }: Props): ColumnsType<Survivor> => [
         render: (fieldData: string) => fieldData,
     },
     {
-        title: 'id',
+        title: 'ID',
         dataIndex: '_id',
         key: 'id'
     },
