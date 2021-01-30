@@ -1,4 +1,4 @@
-import { SurvivorTable } from './tables/SurvivorTable';
+import { SurvivorTable } from '../../tables/SurvivorTable';
 import { Statistics } from '../../statistic/Statistics';
 
 export const DashboardTable = () => {

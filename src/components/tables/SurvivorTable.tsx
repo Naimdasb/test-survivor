@@ -4,11 +4,11 @@ import { Table } from 'antd';
 
 import { getColumns } from './columns/columns';
 
-import { Survivor } from '../../../../types/survivor';
+import { Survivor } from '../../types/survivor';
 
 import { Drawer } from 'antd';
 
-import { SurvivorPreview } from '../../../survivorPreview/SurvivorPreview';
+import { SurvivorPreview } from '../survivorPreview/SurvivorPreview';
 import { useSelector } from 'react-redux';
 
 export const SurvivorTable = () => {
