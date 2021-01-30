@@ -1,4 +1,5 @@
 import { SurvivorTable } from './tables/SurvivorTable';
+import { Statistics } from '../../statistic/Statistics';
 
 export const DashboardTable = () => {
 
@@ -7,6 +8,7 @@ export const DashboardTable = () => {
             <div className='container'>
                 <h1 className='display-4 py-5'>Dashboard</h1>
                 <SurvivorTable />
+                <Statistics />
             </div>
         </div>
     )
