@@ -1,8 +1,7 @@
+import Head from 'next/head';
 import { DashboardTable } from '../components/sections/dashboard/DashboardTable';
 import { Survivor } from '../types/survivor';
 import { useEffect } from 'react';
-
-import { GetStaticProps } from 'next'
 
 import { useDispatch } from 'react-redux';
 
@@ -17,7 +16,15 @@ const Dashboard = ({ data }: Props) => {
         dispatch({ type: 'UPDATE_DB', payload: data })
     }, [])
 
-    return <DashboardTable />
+    return (
+        <div>
+            <Head>
+                <title>Dashboard</title>
+                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+            </Head>
+            <DashboardTable />
+        </div >
+    )
 
 }
 
