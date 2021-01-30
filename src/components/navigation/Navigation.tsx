@@ -9,13 +9,13 @@ export const Navigation = () => {
                 <Navbar.Toggle aria-controls='basic-navbar-nav' />
                 <Navbar.Collapse id='basic-navbar-nav'>
                     <Nav className='mr-auto ml-5'>
-                        <div className='p-2'>
+                        <div className='p-2 p-md-4'>
                             <Link href='/'>Home</Link>
                         </div>
-                        <div className='p-2'>
+                        <div className='p-2 p-md-4'>
                             <Link href='/dashboard'>Dashboard</Link>
                         </div>
-                        <div className='p-2'>
+                        <div className='p-2 p-md-4'>
                             <Link href='/add'>Add Survivor</Link>
                         </div>
                     </Nav>
