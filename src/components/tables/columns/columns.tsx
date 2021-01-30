@@ -10,10 +10,11 @@ import { SearchOutlined } from '@ant-design/icons';
 import { filterDropdown } from '../utils/FilterDropdown'
 
 type Props = {
-    onClick: (survivor: Survivor) => () => void;
+    handlePreview: (survivor: Survivor) => () => void;
+    handleRemove: (id: number) => () => void;
 };
 
-export const getColumns = ({ onClick }: Props): ColumnsType<Survivor> => [
+export const getColumns = ({ handlePreview, handleRemove }: Props): ColumnsType<Survivor> => [
     {
         title: 'Name',
         dataIndex: 'name',
@@ -74,8 +75,11 @@ export const getColumns = ({ onClick }: Props): ColumnsType<Survivor> => [
         render: (survivor: Survivor) => {
             return (
                 <span>
-                    <Button type="primary" onClick={onClick(survivor)}>
+                    <Button type="primary" onClick={handlePreview(survivor)} style={{ width: 80 }}>
                         Review
+                    </Button>
+                    <Button type="ghost" onClick={handleRemove(survivor._id)} style={{ width: 80 }}>
+                        Remove
                     </Button>
                 </span>
             );

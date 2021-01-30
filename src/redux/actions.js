@@ -1,2 +1,3 @@
 export const UPDATE_DB = 'UPDATE_DB';
 export const UPDATE_SURVIVOR = 'UPDATE_SURVIVOR';
+export const REMOVE_SURVIVOR = 'REMOVE_SURVIVOR';

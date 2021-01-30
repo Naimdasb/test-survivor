@@ -36,6 +36,16 @@ const survivors = async (req: NextApiRequest, res: NextApiResponse) => {
                 res.status(400).json({ success: false });
             }
             break;
+        case 'DELETE':
+            try {
+                await Survivor.deleteOne({
+                    _id: req.body
+                });
+                res.status(200).json({ success: true });
+            } catch (error) {
+                res.status(400).json({ success: false });
+            }
+            break;
         default:
             res.status(400).json({ success: false });
     }
