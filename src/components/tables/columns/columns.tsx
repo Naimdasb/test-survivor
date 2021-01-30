@@ -11,7 +11,7 @@ import { filterDropdown } from '../utils/FilterDropdown'
 
 type Props = {
     handlePreview: (survivor: Survivor) => () => void;
-    handleRemove: (id: number) => () => void;
+    handleRemove: (id: string) => () => void;
 };
 
 export const getColumns = ({ handlePreview, handleRemove }: Props): ColumnsType<Survivor> => [
