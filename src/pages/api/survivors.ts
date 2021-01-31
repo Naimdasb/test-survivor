@@ -19,7 +19,7 @@ const survivors = async (req: NextApiRequest, res: NextApiResponse) => {
             break;
         case 'POST':
             try {
-                await Survivor.create(req.body);
+                await Survivor.create(req.body.values);
                 res.status(200).json({ success: true });
             } catch (error) {
                 res.status(400).json({ success: false });
@@ -28,8 +28,8 @@ const survivors = async (req: NextApiRequest, res: NextApiResponse) => {
         case 'PUT':
             try {
                 await Survivor.updateOne({
-                    _id: req.body._id
-                }, { infected: !req.body.infected }, { upsert: true });
+                    _id: req.body.id
+                }, { infected: req.body.infected }, { upsert: true });
 
                 res.status(200).json({ success: true });
             } catch (error) {
@@ -39,7 +39,7 @@ const survivors = async (req: NextApiRequest, res: NextApiResponse) => {
         case 'DELETE':
             try {
                 await Survivor.deleteOne({
-                    _id: req.body
+                    _id: req.body.id
                 });
                 res.status(200).json({ success: true });
             } catch (error) {

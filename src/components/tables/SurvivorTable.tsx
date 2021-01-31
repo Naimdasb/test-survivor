@@ -11,7 +11,7 @@ import { Drawer } from 'antd';
 import { SurvivorPreview } from '../survivorPreview/SurvivorPreview';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { notification, Modal } from 'antd';
+import { Modal } from 'antd';
 
 export const SurvivorTable = () => {
     const [reviewVisible, setReviewVisible] = useState<boolean>(false);
@@ -42,27 +42,10 @@ export const SurvivorTable = () => {
     }
 
     const removeSurvivor = (id: string | null) => {
-
-        return async () => {
-            try {
-                await fetch('http://localhost:3000/api/survivors', {
-                    method: 'DELETE',
-                    headers: {
-                        'Content-Type': 'application/json'
-                    },
-                    body: JSON.stringify(id)
-                })
-                dispatch({ type: 'REMOVE_SURVIVOR', payload: id });
-
-                notification.success({ message: 'Success', description: 'Your survivor was successfuly removed from the database!' });
-                setModalVisible(false);
-
-            } catch (error) {
-                notification.error({ message: 'Error', description: 'There was an error.' });
-                setModalVisible(false);
-            }
+        return () => {
+            dispatch({ type: 'DELETE_SURVIVOR', payload: id });
+            setModalVisible(false);
         }
-
     }
 
     return (
@@ -78,7 +61,7 @@ export const SurvivorTable = () => {
                 <SurvivorPreview survivor={survivor} />
             </Drawer>
             <Modal title="Remove Survivor" visible={modalVisible} onOk={removeSurvivor(selectedId)} onCancel={handleCancelModal} centered>
-                <p className='lead'>{`Are you sure you want to remove survivor id: ${selectedId} from the database ?`}</p>
+                <p className='lead'>{`Are you sure you want to remove survivor ID: ${selectedId} from the database ?`}</p>
             </Modal>
         </div>
     )
