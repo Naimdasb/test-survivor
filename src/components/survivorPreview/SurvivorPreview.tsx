@@ -2,7 +2,11 @@ import { Button } from 'antd';
 
 import { Survivor } from '../../types/survivor';
 
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+
+import { LoadingOutlined } from '@ant-design/icons';
+
+
 
 type Props = {
     survivor: Survivor | null;
@@ -10,6 +14,8 @@ type Props = {
 
 export const SurvivorPreview = ({ survivor }: Props) => {
     const dispatch = useDispatch();
+
+    const loading = useSelector((state: any) => state.loading);
 
     const handleClick = () => {
         if (survivor) {
@@ -30,7 +36,7 @@ export const SurvivorPreview = ({ survivor }: Props) => {
             <p>{survivor.height + ' kg'}</p>
             <p className='lead'>Infected:</p>
             <p>{survivor.infected ? 'Yes' : 'No'}</p>
-            <Button onClick={handleClick} type='primary'>Change Status</Button>
+            <Button onClick={handleClick} type='primary'>{loading ? <LoadingOutlined /> : "Change Status"}</Button>
         </div>
     )
 }
