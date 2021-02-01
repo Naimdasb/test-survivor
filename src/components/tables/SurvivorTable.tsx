@@ -60,7 +60,7 @@ export const SurvivorTable = () => {
             >
                 <SurvivorPreview survivor={survivor} />
             </Drawer>
-            <Modal title="Remove Survivor" visible={modalVisible} onOk={removeSurvivor(selectedId)} onCancel={handleCancelModal} centered>
+            <Modal title="Remove Survivor" closable={false} visible={modalVisible} onOk={removeSurvivor(selectedId)} onCancel={handleCancelModal} centered>
                 <p className='lead'>{`Are you sure you want to remove survivor ID: ${selectedId} from the database ?`}</p>
             </Modal>
         </div>
