@@ -75,10 +75,10 @@ export const getColumns = ({ handleReview, handleRemove }: Props): ColumnsType<S
         render: (survivor: Survivor) => {
             return (
                 <span>
-                    <Button type="primary" onClick={handleReview(survivor)} style={{ width: 80 }}>
+                    <Button type='primary' onClick={handleReview(survivor)} style={{ width: 80 }} className='mb-2 mb-sm-0'>
                         Review
                     </Button>
-                    <Button type="ghost" onClick={handleRemove(survivor._id)} style={{ width: 80 }}>
+                    <Button type='ghost' onClick={handleRemove(survivor._id)} style={{ width: 80 }}>
                         Remove
                     </Button>
                 </span>

@@ -22,7 +22,7 @@ export const filterDropdown = ({
     return (
         <div style={{ padding: 16 }}>
             <Input
-                placeholder="Search..."
+                placeholder='Search...'
                 value={selectedKeys[0]}
                 onChange={handleChange}
                 onPressEnter={confirm}
@@ -30,14 +30,14 @@ export const filterDropdown = ({
             />
             <Space>
                 <Button
-                    type="primary"
+                    type='primary'
                     onClick={confirm}
-                    size="small"
+                    size='small'
                     style={{ width: 90 }}
                 >
                     Search
         </Button>
-                <Button onClick={clearFilters} size="small" style={{ width: 90 }}>
+                <Button onClick={clearFilters} size='small' style={{ width: 90 }}>
                     Reset
         </Button>
             </Space>

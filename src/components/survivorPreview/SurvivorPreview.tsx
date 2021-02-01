@@ -6,8 +6,6 @@ import { useDispatch, useSelector } from 'react-redux';
 
 import { LoadingOutlined } from '@ant-design/icons';
 
-
-
 type Props = {
     survivor: Survivor | null;
 }
@@ -36,7 +34,7 @@ export const SurvivorPreview = ({ survivor }: Props) => {
             <p>{survivor.height + ' kg'}</p>
             <p className='lead'>Infected:</p>
             <p>{survivor.infected ? 'Yes' : 'No'}</p>
-            <Button onClick={handleClick} type='primary'>{loading ? <LoadingOutlined /> : "Change Status"}</Button>
+            <Button onClick={handleClick} type='primary'>{loading ? <LoadingOutlined /> : 'Change Status'}</Button>
         </div>
     )
 }

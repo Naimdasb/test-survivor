@@ -52,15 +52,15 @@ export const SurvivorTable = () => {
         <div>
             <Table dataSource={data} columns={getColumns({ handleReview, handleRemove })} scroll={{ x: '100%' }} rowKey={record => record._id} bordered />
             <Drawer
-                placement="right"
+                placement='right'
                 closable={false}
                 onClose={handleOnClosePreview}
                 visible={reviewVisible}
-                width="70%"
+                width='70%'
             >
                 <SurvivorPreview survivor={survivor} />
             </Drawer>
-            <Modal title="Remove Survivor" closable={false} visible={modalVisible} onOk={removeSurvivor(selectedId)} onCancel={handleCancelModal} centered>
+            <Modal title='Remove Survivor' closable={false} visible={modalVisible} onOk={removeSurvivor(selectedId)} onCancel={handleCancelModal} centered>
                 <p className='lead'>{`Are you sure you want to remove survivor ID: ${selectedId} from the database ?`}</p>
             </Modal>
         </div>

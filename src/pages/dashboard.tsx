@@ -20,7 +20,7 @@ const Dashboard = ({ data }: Props) => {
         <div>
             <Head>
                 <title>Dashboard</title>
-                <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+                <meta name='viewport' content='initial-scale=1.0, width=device-width' />
             </Head>
             <DashboardTable />
         </div >
@@ -29,7 +29,7 @@ const Dashboard = ({ data }: Props) => {
 }
 
 export async function getStaticProps() {
-    const res = await fetch(`http://localhost:3000/api/survivors`)
+    const res = await fetch('http://localhost:3000/api/survivors')
     const { data } = await res.json()
 
     return {

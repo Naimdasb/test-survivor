@@ -5,10 +5,10 @@ export const Navigation = () => {
     return (
         <Navbar bg='light' expand='lg'>
             <Container className='justify-content-between'>
-                <Navbar.Brand className='mr-0'>Survivor List</Navbar.Brand>
+                <Navbar.Brand className='mr-0'>Survivors List</Navbar.Brand>
                 <Navbar.Toggle aria-controls='basic-navbar-nav' />
                 <Navbar.Collapse id='basic-navbar-nav'>
-                    <Nav className='mr-auto ml-5'>
+                    <Nav>
                         <div className='p-2 p-md-4'>
                             <Link href='/'>Home</Link>
                         </div>

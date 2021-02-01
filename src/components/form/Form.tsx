@@ -12,10 +12,10 @@ export const Form = ({ loading }: Props) => {
     return (
         <>
             <Item
-                label="Name"
-                name="name"
+                label='Name'
+                name='name'
                 rules={[{ required: true, message: "Please enter survivor's name." },
-                { max: 20, message: "Max lenght is 20 characters." },
+                { max: 20, message: 'Max lenght is 20 characters.' },
                 ]}
             >
                 <Input />
@@ -24,44 +24,44 @@ export const Form = ({ loading }: Props) => {
                 label="Age"
                 name="age"
                 rules={[{ required: true, message: "Please enter survivor's age." },
-                { max: 3, message: "Max lenght is 3 characters." },
+                { max: 3, message: 'Max lenght is 3 characters.' },
                 ]}
             >
                 <Input type='number' />
             </Item>
             <Item
-                label="City"
-                name="city"
+                label='City'
+                name='city'
                 rules={[{ required: true, message: "Please enter survivor's city." },
-                { max: 20, message: "Max lenght is 20 characters." }
+                { max: 20, message: 'Max lenght is 20 characters.' }
                 ]}
             >
                 <Input />
             </Item>
             <Item
-                label="Weight (kg)"
-                name="weight"
+                label='Weight (kg)'
+                name='weight'
                 rules={[{ required: true, message: "Please enter survivor's weight." },
-                { max: 3, message: "Max lenght is 3 characters." },
+                { max: 3, message: 'Max lenght is 3 characters.' },
                 ]}
             >
                 <Input type='number' />
             </Item>
             <Item
-                label="Height (cm)"
-                name="height"
+                label='Height (cm)'
+                name='height'
                 rules={[{ required: true, message: "Please enter survivor's height." },
-                { max: 3, message: "Max lenght is 3 characters." },
+                { max: 3, message: 'Max lenght is 3 characters.' },
                 ]}
             >
                 <Input type='number' />
             </Item>
-            <Item name="infected" valuePropName='checked'>
+            <Item name='infected' valuePropName='checked'>
                 <Checkbox>Infected</Checkbox>
             </Item>
             <Item>
-                <Button type="primary" htmlType="submit">
-                    {loading ? <LoadingOutlined /> : "Submit"}
+                <Button type='primary' htmlType='submit'>
+                    {loading ? <LoadingOutlined /> : 'Submit'}
                 </Button>
             </Item>
         </>

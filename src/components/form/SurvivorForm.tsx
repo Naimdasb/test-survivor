@@ -31,7 +31,7 @@ export const SurvivorForm = () => {
     return (
         <div className='col-12 col-sm-8 col-lg-6'>
             <AntForm
-                name="basic"
+                name='basic'
                 onFinish={onFinish}
                 layout='vertical'
                 initialValues={initialValues}

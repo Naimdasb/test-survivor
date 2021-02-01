@@ -6,5 +6,5 @@ type Props = {
 }
 
 export const StatusTag = ({ status, text }: Props) => {
-    return <Tag color={status ? "red" : "green"}>{text}</Tag>
+    return <Tag color={status ? 'red' : 'green'}>{text}</Tag>
 }

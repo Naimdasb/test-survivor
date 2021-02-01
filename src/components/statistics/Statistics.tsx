@@ -22,11 +22,11 @@ export const Statistics = () => {
 
     return (
         <div className='d-flex gap-3'>
-            <Card className="col-sm-4 col-6 mb-5">
-                <Statistic title="Total Survivors" value={survivors.length} />
+            <Card className='col-sm-4 col-6 mb-5'>
+                <Statistic title='Total Survivors' value={survivors.length} />
             </Card>
-            <Card className="col-sm-4 col-6 mb-5">
-                <Statistic title="Total Infected" value={infected} />
+            <Card className='col-sm-4 col-6 mb-5'>
+                <Statistic title='Total Infected' value={infected} />
             </Card>
         </div>
     )
